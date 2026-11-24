@@ -63,33 +63,52 @@ Unlike IT-only study templates, every skill in this suite adapts its progression
 
 ## Quick Start
 
-All skills follow the standard `skills/<skill-name>/SKILL.md` structure with progressive disclosure (`references/` loaded only when needed).
+All skills follow the open [Agent Skills](https://agentskills.io) standard (`skills/<skill-name>/SKILL.md` + `references/`), so they work across **all popular AI agent harnesses**.
 
-### Option A — One-Line Install (Agent Skills CLI)
+### Option A — One-Line Install (Recommended, All Harnesses)
 
 ```bash
+# Interactive install (choose skills, target agent harness, and project vs global scope)
 npx skills add lochuung/learning-skill
+
+# Install globally across all projects
+npx skills add lochuung/learning-skill -g
+
+# Install a single skill only
+npx skills add lochuung/learning-skill --skill learning-roadmap-builder
 ```
 
-### Option B — Clone & Copy Manually
+### Option B — Manual Install by Agent Harness
+
+Clone the repository once:
 
 ```bash
 git clone https://github.com/lochuung/learning-skill.git
 ```
 
-Then copy `skills/*` into your AI agent's skills directory:
+Then copy `learning-skill/skills/*` into your harness's skills directory:
 
-- **Antigravity (Project Workspace)** — `.agents/skills/` at the root of your workspace:
-  ```bash
-  # macOS / Linux
-  mkdir -p .agents/skills && cp -r learning-skill/skills/* .agents/skills/
+| Agent Harness | Project Scope | Global Scope |
+| :--- | :--- | :--- |
+| **Antigravity** | `.agents/skills/` | `~/.gemini/config/skills/` |
+| **Claude Code** | `.claude/skills/` | `~/.claude/skills/` |
+| **Cursor** | `.cursor/skills/` *(or `.agents/skills/`)* | `~/.cursor/skills/` |
+| **OpenAI Codex** | `.agents/skills/` | `~/.codex/skills/` |
+| **Gemini CLI** | `.gemini/skills/` *(or `.agents/skills/`)* | `~/.gemini/skills/` |
+| **GitHub Copilot** | `.github/skills/` *(or `.agents/skills/`)* | `~/.copilot/skills/` |
+| **Windsurf** | `.windsurf/skills/` | `~/.codeium/windsurf/skills/` |
+| **OpenCode / Roo / Cline** | `.agents/skills/` *(or `.opencode/`, `.roo/`, `.cline/skills/`)* | `~/.config/opencode/skills/` |
 
-  # Windows (PowerShell)
-  New-Item -ItemType Directory -Force -Path .agents\skills
-  Copy-Item -Recurse -Force learning-skill\skills\* .agents\skills\
-  ```
-- **Antigravity (Global — available in all workspaces)** — `~/.gemini/config/skills/`.
-- **Other Agent Skills-compatible tools** (Claude Code, Cursor, Codex, etc.) — `.claude/skills/`, `.cursor/skills/`, or `.agents/skills/`.
+Example copy command (replace `<target-dir>` with a path from the table above):
+
+```bash
+# macOS / Linux
+mkdir -p <target-dir> && cp -r learning-skill/skills/* <target-dir>/
+
+# Windows (PowerShell)
+New-Item -ItemType Directory -Force -Path <target-dir>
+Copy-Item -Recurse -Force learning-skill\skills\* <target-dir>\
+```
 
 ### Start Learning
 
