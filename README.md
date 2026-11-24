@@ -3,7 +3,8 @@
 [![Skills](https://img.shields.io/badge/Skills-5%20Core%20Skills-2563eb?style=flat-square)](#the-5-skill-learning-loop)
 [![Domains](https://img.shields.io/badge/Domains-Any%20Subject%20%2F%20Field-16a34a?style=flat-square)](#works-across-every-domain)
 [![Multilingual](https://img.shields.io/badge/Language-Auto--Matches%20User-7c3aed?style=flat-square)](#multilingual-by-default)
-[![Format](https://img.shields.io/badge/Format-Agent%20Skills%20Standard-f59e0b?style=flat-square)](#quick-start)
+[![Validate](https://github.com/lochuung/LearningSkill/actions/workflows/validate.yml/badge.svg)](https://github.com/lochuung/LearningSkill/actions/workflows/validate.yml)
+[![License: MIT](https://img.shields.io/badge/License-MIT-f59e0b?style=flat-square)](LICENSE)
 
 > **Turn your AI agent into an evidence-based, personalized learning system for *any* field** — from programming and certifications to languages, finance, design, writing, and public speaking.
 
@@ -64,17 +65,21 @@ Unlike IT-only study templates, every skill in this suite adapts its progression
 
 All skills follow the standard `skills/<skill-name>/SKILL.md` structure with progressive disclosure (`references/` loaded only when needed).
 
-### 1. Clone the repository
+### Option A — One-Line Install (Agent Skills CLI)
 
 ```bash
-git clone https://github.com/<your-username>/LearningSkill.git
+npx skills add lochuung/LearningSkill
 ```
 
-### 2. Install into your AI Agent
+### Option B — Clone & Copy Manually
 
-Choose your setup:
+```bash
+git clone https://github.com/lochuung/LearningSkill.git
+```
 
-- **Antigravity (Project Workspace)** — Copy the `skills/` folders into `.agents/skills/` at the root of your workspace:
+Then copy `skills/*` into your AI agent's skills directory:
+
+- **Antigravity (Project Workspace)** — `.agents/skills/` at the root of your workspace:
   ```bash
   # macOS / Linux
   mkdir -p .agents/skills && cp -r LearningSkill/skills/* .agents/skills/
@@ -83,10 +88,10 @@ Choose your setup:
   New-Item -ItemType Directory -Force -Path .agents\skills
   Copy-Item -Recurse -Force LearningSkill\skills\* .agents\skills\
   ```
-- **Antigravity (Global — available in all workspaces)** — Copy into `~/.gemini/config/skills/`.
-- **Other Agent Skills-compatible tools** (Claude Code, Cursor, Codex, etc.) — Copy `skills/*` into your tool's skills directory (e.g., `.claude/skills/`, `.cursor/skills/`, or `.agents/skills/`).
+- **Antigravity (Global — available in all workspaces)** — `~/.gemini/config/skills/`.
+- **Other Agent Skills-compatible tools** (Claude Code, Cursor, Codex, etc.) — `.claude/skills/`, `.cursor/skills/`, or `.agents/skills/`.
 
-### 3. Start learning
+### Start Learning
 
 Just talk naturally — the agent will automatically activate the right skill based on your intent:
 
@@ -97,6 +102,16 @@ Just talk naturally — the agent will automatically activate the right skill ba
 ### Multilingual by Default
 
 All skill instructions are written in clean English for universal compatibility, and every skill automatically **detects and responds in your language** (e.g., Vietnamese, English, Japanese, etc.) while keeping canonical domain terminology intact.
+
+---
+
+## Examples (Show, Don't Just Tell)
+
+Want to see what these skills actually produce for **non-programming** topics?
+
+- **[Financial Statement Analysis — Sample Roadmap](examples/financial-analysis-sample/README.md)** — Personalized 6-week roadmap for a software engineer learning personal investing (with analogies, diagnostic calibration, and MVW).
+- **[Week 1 Deliberate Practice Sample](examples/financial-analysis-sample/Week-01-Practice.md)** — Domain-native practice with Warm-Up Retrieval, `[MVW]` drill, Transfer Challenge, 1–3 Observable Rubric, and AI Critique Prompt.
+- **[5-Skill End-to-End Walkthrough (Negotiation)](examples/5-skill-walkthrough.md)** — How all 5 skills connect across one week of learning a soft skill.
 
 ---
 
@@ -117,6 +132,18 @@ Here is how a learner uses all 5 skills together during a typical study week:
 ```text
 LearningSkill/
 ├── README.md
+├── LICENSE
+├── .gitignore
+├── .github/
+│   └── workflows/
+│       └── validate.yml              # CI: validates frontmatter & Markdown links
+├── scripts/
+│   └── validate_skills.py            # Local & CI skill validator
+├── examples/
+│   ├── 5-skill-walkthrough.md        # Negotiation 5-skill end-to-end demo
+│   └── financial-analysis-sample/    # Non-IT roadmap + practice sample
+│       ├── README.md
+│       └── Week-01-Practice.md
 └── skills/
     ├── learning-roadmap-builder/
     │   ├── SKILL.md
