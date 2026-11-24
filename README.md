@@ -3,7 +3,7 @@
 [![Skills](https://img.shields.io/badge/Skills-5%20Core%20Skills-2563eb?style=flat-square)](#the-5-skill-learning-loop)
 [![Domains](https://img.shields.io/badge/Domains-Any%20Subject%20%2F%20Field-16a34a?style=flat-square)](#works-across-every-domain)
 [![Multilingual](https://img.shields.io/badge/Language-Auto--Matches%20User-7c3aed?style=flat-square)](#multilingual-by-default)
-[![Validate](https://github.com/lochuung/LearningSkill/actions/workflows/validate.yml/badge.svg)](https://github.com/lochuung/LearningSkill/actions/workflows/validate.yml)
+[![Validate](https://github.com/lochuung/learning-skill/actions/workflows/validate.yml/badge.svg)](https://github.com/lochuung/learning-skill/actions/workflows/validate.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-f59e0b?style=flat-square)](LICENSE)
 
 > **Turn your AI agent into an evidence-based, personalized learning system for *any* field** — from programming and certifications to languages, finance, design, writing, and public speaking.
@@ -68,13 +68,13 @@ All skills follow the standard `skills/<skill-name>/SKILL.md` structure with pro
 ### Option A — One-Line Install (Agent Skills CLI)
 
 ```bash
-npx skills add lochuung/LearningSkill
+npx skills add lochuung/learning-skill
 ```
 
 ### Option B — Clone & Copy Manually
 
 ```bash
-git clone https://github.com/lochuung/LearningSkill.git
+git clone https://github.com/lochuung/learning-skill.git
 ```
 
 Then copy `skills/*` into your AI agent's skills directory:
@@ -82,11 +82,11 @@ Then copy `skills/*` into your AI agent's skills directory:
 - **Antigravity (Project Workspace)** — `.agents/skills/` at the root of your workspace:
   ```bash
   # macOS / Linux
-  mkdir -p .agents/skills && cp -r LearningSkill/skills/* .agents/skills/
+  mkdir -p .agents/skills && cp -r learning-skill/skills/* .agents/skills/
 
   # Windows (PowerShell)
   New-Item -ItemType Directory -Force -Path .agents\skills
-  Copy-Item -Recurse -Force LearningSkill\skills\* .agents\skills\
+  Copy-Item -Recurse -Force learning-skill\skills\* .agents\skills\
   ```
 - **Antigravity (Global — available in all workspaces)** — `~/.gemini/config/skills/`.
 - **Other Agent Skills-compatible tools** (Claude Code, Cursor, Codex, etc.) — `.claude/skills/`, `.cursor/skills/`, or `.agents/skills/`.
@@ -130,7 +130,7 @@ Here is how a learner uses all 5 skills together during a typical study week:
 ## Repository Structure
 
 ```text
-LearningSkill/
+learning-skill/
 ├── README.md
 ├── LICENSE
 ├── .gitignore
