@@ -14,8 +14,10 @@ MAX_SKILL_MD_LINES = 150
 FRONTMATTER_RE = re.compile(r"^---\r?\n(.*?)\r?\n---", re.DOTALL)
 NAME_RE = re.compile(r"^name:\s*([a-z0-9-]+)\s*$", re.MULTILINE)
 DESC_RE = re.compile(r"^description:\s*\S+", re.MULTILINE)
-MD_LINK_RE = re.compile(r"\]\(([^)#:\s]+\.md)(?:#[^)]*)?\)")
-TEMPLATE_PLACEHOLDERS = ("<", "Week-NN", "Week-01", "Tuan-NN", "Tuan-01", "1.<")
+MD_LINK_RE = re.compile(r"\]\(([^)#:\s]+\.md)(?:#([^)\s]*))?\)")
+HTML_ID_RE = re.compile(r"<a\s+(?:id|name)=\"([^\"]+)\"", re.IGNORECASE)
+HEADING_RE = re.compile(r"^#{1,6}\s+(.+?)\s*#*\s*$", re.MULTILINE)
+TEMPLATE_PLACEHOLDERS = ("<", "Week-NN", "Tuan-NN", "1.<")
 
 
 def validate_skills() -> tuple[list[str], list[str]]:
@@ -67,6 +69,20 @@ def validate_skills() -> tuple[list[str], list[str]]:
     return errors, warnings
 
 
+def github_slug(heading: str) -> str:
+    """Approximate GitHub heading anchors: lowercase, drop punctuation, spaces to hyphens."""
+    text = re.sub(r"[`*_]", "", heading.strip().lower())
+    text = re.sub(r"[^\w\s-]", "", text)
+    return re.sub(r"\s", "-", text)
+
+
+def collect_anchors(path: Path) -> set[str]:
+    text = path.read_text(encoding="utf-8")
+    anchors = set(HTML_ID_RE.findall(text))
+    anchors.update(github_slug(h) for h in HEADING_RE.findall(text))
+    return anchors
+
+
 def validate_markdown_links() -> list[str]:
     errors: list[str] = []
     md_files = sorted(
@@ -77,12 +93,17 @@ def validate_markdown_links() -> list[str]:
         text = md_file.read_text(encoding="utf-8")
         for match in MD_LINK_RE.finditer(text):
             rel = match.group(1)
+            fragment = match.group(2)
             if any(token in rel for token in TEMPLATE_PLACEHOLDERS):
                 continue
             target = (md_file.parent / rel).resolve()
             if not target.exists():
                 errors.append(
                     f"{md_file.relative_to(ROOT)}: broken relative link -> '{rel}'"
+                )
+            elif fragment and fragment not in collect_anchors(target):
+                errors.append(
+                    f"{md_file.relative_to(ROOT)}: missing anchor '#{fragment}' in '{rel}'"
                 )
 
     return errors

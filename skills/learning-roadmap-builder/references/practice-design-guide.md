@@ -2,7 +2,7 @@
 
 Great roadmaps fail when practice is vague ("read Chapter 3", "practice speaking"). Use this guide to design **domain-native, personalized, verifiable practice** for every week.
 
-## 1. The 5-Stage Practice Architecture
+## 1. The 5-Part Practice Architecture
 
 Every `Week-NN-Practice.md` follows this progression (scaled to the user's weekly hours):
 
@@ -11,6 +11,18 @@ Every `Week-NN-Practice.md` follows this progression (scaled to the user's weekl
 3. **Deliberate Drills (30–35% time)** — 2–3 targeted exercises isolating the week's hardest sub-skills at the edge of the learner's ability, tailored to their real-world context.
 4. **Transfer Challenge (20–25% time)** — 1 realistic, unguided scenario combining the week's skills (plus earlier weeks in Phase 2+) with **hidden hints** (`<details>`) and an **Observable Rubric**.
 5. **Feedback, Reflection & Error Log (10% time)** — Self-check rubric, an **AI Critique Prompt** (for solo learners), and a 3-line error/insight log.
+
+### Stage ↔ Lab Mapping (notes ↔ practice)
+
+The weekly notes are split into **3–4 Stages** (Vietnamese: *Chặng*). Parts 2–4 above become numbered **Labs**, one per Stage, so every Stage ends with a pointer to the exact Lab that practices it:
+
+| Notes Stage | Practice Lab | Part |
+| :--- | :--- | :--- |
+| Stage 1 | Lab 1 | Guided Practice |
+| Stage 2 … N-1 | Lab 2 … N-1 | One Deliberate Drill each (exactly one tagged `[MVW]`) |
+| Stage N (Integrate) | Lab N | Transfer Challenge (+ rubric, AI critique prompt) |
+
+Rules: Lab *k* covers Stage *k* (1:1). Use explicit `<a id="lab-k"></a>` / `<a id="stage-k"></a>` anchors and link both directions. Each Lab opens with `Covers: Stage k`; each Stage closes with `🧪 Next: Lab k` (time, what it proves, done-when). Warm-Up Retrieval stays before Lab 1 and has no Stage.
 
 ## 2. Domain-Native Practice Menu
 
@@ -28,9 +40,9 @@ Pick exercises that match the learner's **Domain Archetype** — never force IT 
 ## 3. Adapting Practice to Learner Profile
 
 ### By Session Rhythm
-- **Daily micro-sessions (20–30 min/day)**: Break the practice file into `Day 1` → `Day 5` atomic 20-min blocks (e.g. Mon: Warm-up + Concept; Tue–Thu: 1 Drill/day; Fri: Challenge; Sat: Review).
+- **Daily micro-sessions (20–30 min/day)**: One Stage + its Lab per day (e.g. Mon: Warm-up + Stage 1 + Lab 1; Tue–Wed: Stage 2–3 + Lab 2–3; Thu: Stage 4 + Transfer Challenge; Fri: Active Recall Check + Review).
 - **Weekday evenings (1h × 3–4)**: Group into 3–4 focused sessions (Understand + Guided → Drills → Challenge + Reflect).
-- **Weekend deep blocks (2–3h × 2)**: Combine into 1 deep workshop (Theory + Guided + Drills) + 1 capstone lab/challenge session.
+- **Weekend deep blocks (2–3h × 2)**: Block 1 = Stages 1–3 with Labs 1–3 back to back; Block 2 = Stage 4 + Transfer Challenge + Active Recall Check.
 
 ### By Verified Level
 - **Beginner**: More worked examples, explicit step-by-step checklists, smaller scope, immediate wins in Week 1 to build confidence.

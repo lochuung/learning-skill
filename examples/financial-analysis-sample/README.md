@@ -23,17 +23,19 @@
 
 ### Week 1 — Reading the 3 Financial Statements Without Jargon
 - **Objective:** Trace a single business transaction across the Income Statement, Balance Sheet, and Cash Flow Statement, and spot why profitable companies can still run out of cash.
+- **Notes:** [Week-01-Reading-the-3-Statements.md](Week-01-Reading-the-3-Statements.md)
 - **Practice:** [Week-01-Practice.md](Week-01-Practice.md)
-- **Minimum Viable Week (MVW):** Complete Drill A (`[MVW]`) — 25-minute Cash vs Profit teardown on 1 real company.
+- **Stages → Labs:** S1 → [Lab 1](Week-01-Practice.md#lab-1) · S2 → [Lab 2](Week-01-Practice.md#lab-2) `[MVW]` · S3 → [Lab 3](Week-01-Practice.md#lab-3) · S4 → [Lab 4](Week-01-Practice.md#lab-4)
+- **Minimum Viable Week (MVW):** Complete Lab 2 (`[MVW]`) — 25-minute Cash vs Profit teardown on 1 real company.
 
 ## 📅 Sample Weekly Schedule (4 hrs/week)
-- **Tue (30m):** Read Week Notes + mental model diagram
-- **Thu (30m):** Warm-Up Retrieval + Guided Practice
-- **Fri (30m):** Drill A `[MVW]`
-- **Sat (2h 30m):** Drill B + Transfer Challenge + Rubric/AI Critique + 3-min Error Log
+- **Tue (30m):** Stage 1 (read + Checkpoint) → Lab 1
+- **Thu (30m):** Warm-Up Retrieval + Stage 2 → Lab 2 `[MVW]`
+- **Fri (30m):** Stage 3 → Lab 3
+- **Sat (2h 30m):** Stage 4 → Lab 4 Transfer Challenge + Rubric/AI Critique + Active Recall Check + 3-min Error Log
 
 ## ✅ Progress Tracker
-- [x] **Week 1** — The 3 Statements & Cash vs Profit ([Practice](Week-01-Practice.md))
+- [x] **Week 1** — The 3 Statements & Cash vs Profit ([Notes](Week-01-Reading-the-3-Statements.md) | [Practice](Week-01-Practice.md))
 - [ ] **Week 2** — Working Capital & Free Cash Flow
 - [ ] **Week 3** — Profitability, Margins & ROIC
 - [ ] **Week 4** — Valuation Multiples (P/E vs EV/EBITDA)

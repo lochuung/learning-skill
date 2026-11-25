@@ -1,5 +1,7 @@
 # LearningSkill
 
+**English** | [Tiếng Việt](README.vi.md)
+
 [![Skills](https://img.shields.io/badge/Skills-5%20Core%20Skills-2563eb?style=flat-square)](#the-5-skill-learning-loop)
 [![Domains](https://img.shields.io/badge/Domains-Any%20Subject%20%2F%20Field-16a34a?style=flat-square)](#works-across-every-domain)
 [![Multilingual](https://img.shields.io/badge/Language-Auto--Matches%20User-7c3aed?style=flat-square)](#multilingual-by-default)
@@ -36,6 +38,28 @@ flowchart LR
 
 ---
 
+## Weekly Layout: Stages → Labs
+
+Every generated week is split into **3–4 Stages** (Vietnamese: *Chặng*) instead of one long theory page. Each Stage ends with a link to the exact Lab in the practice file, so you never read theory without practicing it right away.
+
+```mermaid
+flowchart LR
+    S1["Stage 1\nTheory + Checkpoint"] --> L1["Lab 1\nGuided"]
+    L1 --> S2["Stage 2\nTheory + Checkpoint"]
+    S2 --> L2["Lab 2 [MVW]\nDrill A"]
+    L2 --> S3["Stage 3\nTheory + Checkpoint"]
+    S3 --> L3["Lab 3\nDrill B"]
+    L3 --> S4["Stage 4\nIntegrate"]
+    S4 --> L4["Lab 4\nTransfer Challenge"]
+```
+
+- `Week-NN-<Title>.md` holds the Stages. Each ends with a `🧪 Next: Lab k` box linking to `Week-NN-Practice.md#lab-k`.
+- `Week-NN-Practice.md` holds the Labs. Each opens with `Covers: Stage k` linking back.
+- Stage *k* maps to Lab *k*. Exactly one Lab is tagged `[MVW]` for busy weeks.
+
+See it in a real sample: [Week 1 Notes](examples/financial-analysis-sample/Week-01-Reading-the-3-Statements.md) and [Week 1 Practice](examples/financial-analysis-sample/Week-01-Practice.md).
+
+---
 ## Works Across Every Domain
 
 Unlike IT-only study templates, every skill in this suite adapts its progression, exercises, and rubrics to **6 Domain Archetypes**:
@@ -129,7 +153,8 @@ All skill instructions are written in clean English for universal compatibility,
 Want to see what these skills actually produce for **non-programming** topics?
 
 - **[Financial Statement Analysis — Sample Roadmap](examples/financial-analysis-sample/README.md)** — Personalized 6-week roadmap for a software engineer learning personal investing (with analogies, diagnostic calibration, and MVW).
-- **[Week 1 Deliberate Practice Sample](examples/financial-analysis-sample/Week-01-Practice.md)** — Domain-native practice with Warm-Up Retrieval, `[MVW]` drill, Transfer Challenge, 1–3 Observable Rubric, and AI Critique Prompt.
+- **[Week 1 Notes Sample (Stages)](examples/financial-analysis-sample/Week-01-Reading-the-3-Statements.md)** — Theory split into 4 Stages, each with a Checkpoint and a link to its Lab.
+- **[Week 1 Deliberate Practice Sample (Labs)](examples/financial-analysis-sample/Week-01-Practice.md)** — Lab Map, Warm-Up Retrieval, `[MVW]` lab, Transfer Challenge, 1–3 Observable Rubric, and AI Critique Prompt.
 - **[5-Skill End-to-End Walkthrough (Negotiation)](examples/5-skill-walkthrough.md)** — How all 5 skills connect across one week of learning a soft skill.
 
 ---
@@ -140,7 +165,7 @@ Here is how a learner uses all 5 skills together during a typical study week:
 
 1. **Sunday (Plan):** Run `learning-roadmap-builder` → generates your personalized study repo (`README.md` + `Week-01` notes & practice).
 2. **Monday–Tuesday (Understand):** Stuck on a tricky concept in Week 1? Ask `socratic-tutor` → *"Explain discounted cash flow interactively using a SaaS subscription analogy."*
-3. **Wednesday–Thursday (Practice):** Complete Week 1's `[MVW]` drill and Transfer Challenge, then hand your work to `practice-critique-coach` → get a 1–3 rubric scorecard, concrete rewrites, and a 10-minute fix-it drill.
+3. **Wednesday–Thursday (Practice):** Complete Week 1's Labs (start with the `[MVW]` lab) and Transfer Challenge, then hand your work to `practice-critique-coach` → get a 1–3 rubric scorecard, concrete rewrites, and a 10-minute fix-it drill.
 4. **Friday (Retrieve):** Run `active-recall-quizzer` → 10-minute closed-book adaptive quiz mixing Week 1 with earlier weak spots; missed items get scheduled for spaced review.
 5. **Saturday (Synthesize):** Use `knowledge-synthesizer` → do a 5-minute Feynman teach-back and save a 1-page comparison matrix / cheat sheet into your repo before moving to Week 2.
 
@@ -150,7 +175,8 @@ Here is how a learner uses all 5 skills together during a typical study week:
 
 ```text
 learning-skill/
-├── README.md
+├── README.md                         # English
+├── README.vi.md                      # Tiếng Việt
 ├── LICENSE
 ├── .gitignore
 ├── .github/
@@ -160,8 +186,9 @@ learning-skill/
 │   └── validate_skills.py            # Local & CI skill validator
 ├── examples/
 │   ├── 5-skill-walkthrough.md        # Negotiation 5-skill end-to-end demo
-│   └── financial-analysis-sample/    # Non-IT roadmap + practice sample
+│   └── financial-analysis-sample/    # Non-IT roadmap + notes (Stages) + practice (Labs) sample
 │       ├── README.md
+│       ├── Week-01-Reading-the-3-Statements.md
 │       └── Week-01-Practice.md
 └── skills/
     ├── learning-roadmap-builder/

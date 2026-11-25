@@ -71,8 +71,8 @@ Use [templates.md](./references/templates.md) and [practice-design-guide.md](./r
 <topic-slug>/
 ├── README.md                        # Master roadmap, persona, schedule, MVW, resources, tracker
 ├── 1.<Phase-1-Name>/
-│   ├── Week-01-<Title>.md           # Concept notes + analogies + recall questions
-│   ├── Week-01-Practice.md          # Domain-native deliberate practice + rubric + reflection
+│   ├── Week-01-<Title>.md           # 3–4 Stages (theory + checkpoint), each ending with a link to its Lab
+│   ├── Week-01-Practice.md          # Lab 1…N (1 Lab per Stage) + rubric + reflection
 │   └── ...
 ├── 2.<Phase-2-Name>/ ...
 └── 3.<Final-Phase-Name>/            # Exam Prep OR Capstone/Portfolio OR Live Performance
@@ -82,8 +82,8 @@ Use [templates.md](./references/templates.md) and [practice-design-guide.md](./r
 Generation rules:
 - **README first**: learner profile & personalization decisions, outcome/syllabus map, phase & week breakdown, weekly schedule matched to their actual session rhythm, **Minimum Viable Week** rule, curated resources with verified URLs, the universal 4-step loop (**Understand → Visualize/Connect → Deliberate Practice → Retrieve & Reflect**), and a **Progress Tracker**.
 - **Visible personalization**: weave analogies from the learner's background into notes; tailor scenarios/examples to their real job, industry, or personal goals; respect budget and tool constraints; write in their language while keeping canonical domain terms intact.
-- **Notes (`Week-NN-<Title>.md`)**: learning objectives, key concepts explained clearly (not walls of text), comparison tables / Mermaid diagrams where helpful, common pitfalls / misconceptions, and 5–8 active-recall questions (including 1–2 spaced-repetition questions from earlier weeks) with collapsed `<details>` answers.
-- **Practice (`Week-NN-Practice.md`)**: designed per [practice-design-guide.md](./references/practice-design-guide.md) — warm-up recall, progressive scaffolding (Guided → Deliberate Drill → Transfer Challenge), explicit **Self-Check Rubric**, **AI Critique Prompt** (so solo learners can get structured feedback), and a short **Reflection & Error Log**. Only include environment setup, cost notes, or cleanup when the domain actually requires them.
+- **Notes (`Week-NN-<Title>.md`)**: learning objectives, a **Week Map (Stage → Lab)**, then **3–4 Stages** (Vietnamese: *Chặng*). Each Stage has a goal, concise concepts (not walls of text) with analogy/diagram/worked example, a 1–2 question closed-book Checkpoint, and **ends with a 🧪 Next: Lab k box linking to the exact Lab anchor** in the Practice file. After the last Stage: common pitfalls and 5–8 active-recall questions (including 1–2 spaced-repetition callbacks) with collapsed `<details>` answers.
+- **Practice (`Week-NN-Practice.md`)**: designed per [practice-design-guide.md](./references/practice-design-guide.md) — a Lab Map, warm-up recall, then numbered **Labs matching the Stages 1:1** (Lab 1 Guided → middle Labs Deliberate Drills, one tagged `[MVW]` → last Lab Transfer Challenge), each with `<a id="lab-k"></a>` and a `Covers: Stage k` back-link; explicit **Self-Check Rubric**, **AI Critique Prompt** (so solo learners can get structured feedback), and a short **Reflection & Error Log**. Only include environment setup, cost notes, or cleanup when the domain actually requires them.
 - **Final phase**: choose the matching capstone track — **(A) Exam/Cert** (consolidation, ≥25-question mock + weak-area tracker, cheat sheet), **(B) Project/Portfolio** (real-world capstone spec + rubric + review checklist), or **(C) Fluency/Performance** (live simulation/roleplay + recording rubric + ongoing maintenance plan).
 - **Iterative delivery**: for roadmaps >4 weeks, generate `README.md` + Phase 1 (or Week 1–2) first, update links/tracker, and offer to continue or recalibrate difficulty/pace. Never claim files you did not write.
 - **Factual accuracy**: verify facts, figures, frameworks, and links against Step 2 sources; mark anything uncertain.
@@ -91,5 +91,5 @@ Generation rules:
 ## Step 5 — Validate & Hand Over
 
 1. List all created files and verify every relative link in `README.md` resolves cleanly (URL-encode spaces as `%20`, `&` as `%26`).
-2. Confirm every generated week has its notes + practice file (or combined file for ≤4-week sprints) and appears in the Progress Tracker.
+2. Confirm every generated week has its notes + practice file (or combined file for ≤4-week sprints) and appears in the Progress Tracker. Confirm Stage count = Lab count, every Stage ends with a working Lab link, and every Lab links back to its Stage.
 3. Give a concise handover: folder structure, key personalizations applied, exact **Day 1 first action** (≤15 min to build momentum), and offer next actions (generate next weeks, run a diagnostic quiz, act as a practice/critique partner, or adjust pace).

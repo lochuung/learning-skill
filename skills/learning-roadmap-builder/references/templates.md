@@ -35,6 +35,7 @@ Replace `<...>`. Use zero-padded week prefixes (`Week-01-` for English, `Tuan-01
 - **Objective:** <what the learner can DO by the end of this week>
 - **Notes:** [Week-01-<Title>.md](1.<Phase>/Week-01-<Title>.md)
 - **Practice:** [Week-01-Practice.md](1.<Phase>/Week-01-Practice.md)
+- **Stages → Labs:** S1 → [Lab 1](1.<Phase>/Week-01-Practice.md#lab-1) · S2 → [Lab 2](1.<Phase>/Week-01-Practice.md#lab-2) `[MVW]` · S3 → [Lab 3](1.<Phase>/Week-01-Practice.md#lab-3) · S4 → [Lab 4](1.<Phase>/Week-01-Practice.md#lab-4)
 - **Core Resource:** [<Name>](<url>)
 - **Minimum Viable Week (MVW):** <30–40% fallback if busy>
 
@@ -74,39 +75,87 @@ Replace `<...>`. Use zero-padded week prefixes (`Week-01-` for English, `Tuan-01
 
 ## 2. Weekly Notes (`Week-NN-<Title>.md`)
 
+Split every week into **3–4 Stages** (Vietnamese: **Chặng**). Each Stage teaches one focused concept cluster, checks it with 1–2 closed-book questions, and **ends with a pointer to the exact Lab** in `Week-NN-Practice.md` that practices it. Stage *k* ↔ Lab *k*, one-to-one. Never end a Stage without a Lab link, and never put two Stages before the same Lab.
+
 ````markdown
 # Week N — <Title> (<TOPIC>)
 
 > **By the end of this week, you can:** <2–3 concrete action outcomes (verbs, not "understand")>
 > **Practice companion:** [Week-NN-Practice.md](Week-NN-Practice.md)
 
-## Table of Contents
-1. ...
+## 🗺️ Week Map (Stage → Lab)
+| Stage | You will learn | Read | Lab (do right after) | Lab time |
+| :-: | :--- | :-: | :--- | :-: |
+| 1 | <concept cluster 1> | 15m | [Lab 1 — <Guided name>](Week-NN-Practice.md#lab-1) | 25m |
+| 2 | <concept cluster 2> | 15m | [Lab 2 — <Drill A name>](Week-NN-Practice.md#lab-2) `[MVW]` | 25m |
+| 3 | <concept cluster 3> | 15m | [Lab 3 — <Drill B name>](Week-NN-Practice.md#lab-3) | 30m |
+| 4 | <integration> | 10m | [Lab 4 — Transfer Challenge](Week-NN-Practice.md#lab-4) | 45m |
 
-## 1. <Core Concept>
-- **Why it matters:** <real-world relevance to learner's goal>
-- **Analogy from your background:** <tailored bridge to what they already know>
+> **Loop for every Stage:** Read → Checkpoint (closed-book) → Lab → back to the next Stage.
+
+---
+
+<a id="stage-1"></a>
+## Stage 1 — <Concept cluster name>
+> **Stage goal:** you can <verb + observable result>.
+
+- **Why it matters:** <relevance to learner's goal>
+- **Analogy from your background:** <tailored bridge>
 - **How it works:** <concise explanation + comparison table or Mermaid diagram>
 - **Worked example:** <concrete scenario in learner's context>
+- **Watch out:** <1–2 pitfalls specific to this Stage>
 
-*(Repeat for 3–5 focused concepts — avoid walls of text.)*
-
-## N-1. Common Pitfalls & Key Takeaways *(or Exam Traps for cert tracks)*
-1. **Pitfall:** ... → **Instead:** ...
-
-## N. Active Recall Check *(Closed-Book)*
-*(5–8 questions: 4–6 from this week + 1–2 spaced-repetition callbacks from earlier weeks.)*
-
-**Q1:** <scenario or explain-in-your-own-words prompt>
+### ✅ Stage 1 Checkpoint *(closed-book, 1–2 questions, 3 min)*
+**Q:** <scenario or explain-in-your-own-words prompt>
 <details>
 <summary>Show answer</summary>
 <concise answer + reasoning>
 </details>
+
+### 🧪 Next: Lab 1
+> 👉 **Do now:** [Lab 1 — <Guided name>](Week-NN-Practice.md#lab-1) (~25 min)
+> **What this lab proves:** <the Stage 1 skill it exercises>
+> **Done when:** <observable completion criterion>. Then continue to Stage 2.
+
+---
+
+<a id="stage-2"></a>
+## Stage 2 — <Concept cluster name>
+*(Same structure: goal → concepts → Checkpoint → 🧪 Next: Lab 2. Mark the `[MVW]` lab here.)*
+
+<a id="stage-3"></a>
+## Stage 3 — <Concept cluster name>
+*(Same structure → 🧪 Next: Lab 3.)*
+
+<a id="stage-4"></a>
+## Stage 4 — Integrate & Apply
+*(Combine Stages 1…N-1; no new theory beyond a short synthesis → 🧪 Next: Lab N = Transfer Challenge.)*
+
+---
+
+## Common Pitfalls & Key Takeaways *(or Exam Traps for cert tracks)*
+1. **Pitfall:** ... → **Instead:** ...
+
+## Active Recall Check *(Closed-Book, after all Labs)*
+*(5–8 questions: 4–6 from this week + 1–2 spaced-repetition callbacks from earlier weeks.)*
+
+**Q1:** <question>
+<details>
+<summary>Show answer</summary>
+<answer>
+</details>
 ````
+
+Rules:
+- **3–4 Stages per week**, ~10–20 min reading each, matched to the learner's session length (a 25-min daily learner reads 1 Stage + does its Lab per day).
+- Every Lab link uses an explicit anchor (`#lab-1`, `#lab-2`, …) that **exists** in the Practice file, and every Stage heading has a matching `<a id="stage-k"></a>` anchor so the Practice file can link back.
+- The Stage that contains the `[MVW]` lab must say so in its "Next" box.
 
 ---
 
 ## 3. Weekly Deliberate Practice (`Week-NN-Practice.md`)
+
+Organized as **Labs numbered to match the Stages** in the notes. Each Lab declares which Stage it covers and links back. Place an explicit `<a id="lab-k"></a>` anchor before each Lab heading (more reliable than auto-generated heading slugs).
 
 ````markdown
 # Week N — Deliberate Practice: <Title>
@@ -114,27 +163,45 @@ Replace `<...>`. Use zero-padded week prefixes (`Week-01-` for English, `Tuan-01
 > **Estimated time:** <X hrs> (fits your <session shape>) | **MVW time:** <Y mins>
 > **Related notes:** [Week-NN-<Title>.md](Week-NN-<Title>.md)
 
+## 🗺️ Lab Map
+| Lab | Type | Covers | Time | Tag |
+| :-: | :--- | :--- | :-: | :-: |
+| [Lab 1](#lab-1) | Guided Practice | [Stage 1](Week-NN-<Title>.md#stage-1) | 25m | |
+| [Lab 2](#lab-2) | Deliberate Drill A | [Stage 2](Week-NN-<Title>.md#stage-2) | 25m | `[MVW]` |
+| [Lab 3](#lab-3) | Deliberate Drill B | [Stage 3](Week-NN-<Title>.md#stage-3) | 30m | |
+| [Lab 4](#lab-4) | Transfer Challenge | Stages 1–3 | 45m | |
+
 ## 0. Prep & Setup *(Include ONLY if tools, materials, or cost apply; omit otherwise)*
 > **Cost / Safety note:** <only if applicable>
 
 ## 1. Warm-Up Retrieval (5–10 min)
-*(2–3 quick recall prompts from Week N-1 / N-3 — do closed-book before starting.)*
+*(2–3 quick recall prompts from Week N-1 / N-3 — do closed-book before Lab 1.)*
 
-## 2. Guided Practice: <Name>
+---
+
+<a id="lab-1"></a>
+## Lab 1 — Guided Practice: <Name>
+> **Covers:** [Stage 1 — <name>](Week-NN-<Title>.md#stage-1) | **Time:** 25 min
 - **Goal:** ...
 - **Steps / Scaffold:** <worked walkthrough or structured template>
 - **Expected outcome:** <what good looks like>
+- **Next:** continue to [Stage 2](Week-NN-<Title>.md#stage-2) in the notes.
 
-## 3. Deliberate Drills *(Pick 2–3; mark the #1 highest-leverage drill with `[MVW]`)*
-### Drill A `[MVW]`: <Targeted sub-skill>
+<a id="lab-2"></a>
+## Lab 2 `[MVW]` — Deliberate Drill A: <Targeted sub-skill>
+> **Covers:** [Stage 2 — <name>](Week-NN-<Title>.md#stage-2) | **Time:** 25 min
 - **Scenario (tailored to your context):** ...
 - **Task:** ...
 - **Target / Check:** ...
 
-### Drill B: <Targeted sub-skill>
+<a id="lab-3"></a>
+## Lab 3 — Deliberate Drill B: <Targeted sub-skill>
+> **Covers:** [Stage 3 — <name>](Week-NN-<Title>.md#stage-3)
 ...
 
-## 4. Transfer Challenge (Unguided)
+<a id="lab-4"></a>
+## Lab 4 — Transfer Challenge (Unguided)
+> **Covers:** Stages 1–3 combined (plus earlier weeks in Phase 2+)
 ### Scenario & Constraints
 <Realistic problem combining this week's skills without step-by-step instructions>
 
@@ -154,19 +221,27 @@ Replace `<...>`. Use zero-padded week prefixes (`Week-01-` for English, `Tuan-01
 > Copy & paste this prompt with your work into an AI assistant:
 > "Act as a strict <domain> coach. Evaluate my work below against the rubric above (<list criteria>). Return: (1) Score 1–3 per criterion, (2) Top 2 strengths, (3) Top 2 concrete improvements with examples, (4) One 10-minute follow-up drill."
 
-## 5. Cleanup *(Include ONLY for cloud/paid/physical setups; omit otherwise)*
+---
 
-## 6. Weekly Reflection & Error Log (3 min)
+## Cleanup *(Include ONLY for cloud/paid/physical setups; omit otherwise)*
+
+## Weekly Reflection & Error Log (3 min)
 - **What clicked easily:** ...
 - **What tripped me up (revisit next week):** ...
 - **Checklist:**
   - [ ] Completed Warm-Up Retrieval
-  - [ ] Completed `[MVW]` drill
-  - [ ] Completed Transfer Challenge & scored rubric
+  - [ ] Completed Lab 1 and Lab 2 `[MVW]`
+  - [ ] Completed Lab 3
+  - [ ] Completed Lab 4 (Transfer Challenge) & scored rubric
+  - [ ] Completed the Active Recall Check in the notes
 ````
 
----
+Rules:
+- Lab count equals Stage count; Lab *k* covers Stage *k*, and the last Lab is the Transfer Challenge.
+- Exactly one Lab carries `[MVW]`.
+- The Transfer Challenge's rubric and AI Critique Prompt live inside the last Lab.
 
+---
 ## 4. Final-Phase Variants (Choose Matching Track)
 
 ### Track A — Exam / Certification
@@ -183,4 +258,4 @@ Replace `<...>`. Use zero-padded week prefixes (`Week-01-` for English, `Tuan-01
 - `Week-NN-Assessment-and-Maintenance.md`: Competency self-assessment rubric (before vs after comparison), real-world deployment challenge, and a sustainable 15-min/day maintenance routine so skills don't decay.
 
 ### Sprint Variant (≤4 Weeks)
-Collapse to 2 phases and use a **single combined file per week** (`Week-NN-<Title>.md`) containing concise Notes + 1–2 Deliberate Drills + Mini-Challenge + Rubric.
+Collapse to 2 phases and use a **single combined file per week** (`Week-NN-<Title>.md`) with 2–3 Stages. Each Stage holds concise theory, a Checkpoint, and an **inline Lab** at its end (### 🧪 Lab k), and the last Stage's Lab is the Mini-Challenge + Rubric.
